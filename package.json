@@ -1,0 +1,15 @@
+{
+  "name": "educy",
+  "version": "1.0.0",
+  "description": "automation ui using cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^12.17.1"
+  }
+}
