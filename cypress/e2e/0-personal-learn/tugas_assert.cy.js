@@ -1,9 +1,14 @@
 ///<reference types = "cypress"/>
 
-describe('tugas', ()=>{
-    it('clicking "type" shows the right heading', ()=>{
+describe('tugas assert', ()=>{
+
+    beforeEach(() => {
         cy.visit('https://example.cypress.io')
-       // cy.pause()//jeda
+    });
+    
+    
+
+    it.only('clicking "type" shows the right heading', ()=>{
 
         cy.contains('type').click()
         cy.url().should('include', "commands/actions")
