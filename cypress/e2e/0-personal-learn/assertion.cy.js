@@ -2,7 +2,16 @@
 
 describe ('Browser Actions', ()=>{
     it('connect correct url', ()=>{
-        cy.visit('http:facebook.com')
+        cy.visit('https://example.com/')
     })
+
+    it('should check correcr url', () => {
+        cy.url().should('include', 'example.com')
+    });
+
+
+   
+        
+    
 })
 
