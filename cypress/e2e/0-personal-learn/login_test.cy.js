@@ -7,7 +7,7 @@ describe('working with inputs ',()=>{
         cy.url().should('include', 'login')
     })
 
-    it('Shouls fill login field', () => {
+    it('Should fill login field', () => {
         cy.get('#user_login').clear().type('username')
         cy.get('#user_password').clear().type('password')
         cy.get('#user_remember_me').check()
