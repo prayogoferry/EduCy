@@ -1,6 +1,6 @@
 {
-  "username": "usernme",
-  "password": "password"
+  "username": ["usernme","student"," incorrectUser"],
+  "password": ["password","Password123"]
 
 }
  
