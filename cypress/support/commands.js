@@ -25,5 +25,11 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 Cypress.Commands.add('login', (username, password)=>{
+    cy.clearCookies()
+    cy.clearLocalStorage()
+    cy.get('#user_login').type(username)
+    cy.get('#user_password').type(password)
+    cy.contains('Sign in').click()
+    
 
 })
