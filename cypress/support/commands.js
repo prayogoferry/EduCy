@@ -51,6 +51,22 @@ Cypress.Commands.add('login_2', ()=>{
     })
 })
 
+Cypress.Commands.add('pay_bill', (payee, account, amount, date, desc)=>{
+    cy.clearCookies()
+    cy.clearLocalStorage()
+
+    cy.get('#sp_payee').select(payee)
+        cy.get('#sp_account').select(account)
+        cy.get('#sp_amount').type(amount)
+        cy.get('#sp_date').click()
+        cy.get('.ui-state-default', {timeout:40000}).contains(date).click()
+        cy.get('#sp_description').clear().type(desc)
+        cy.get('#pay_saved_payees').click()
+
+
+
+})
+
 Cypress.Commands.add('input', (element, inputText)=>{
     cy.get(element).clear().type(inputText)
 })
