@@ -1,13 +1,13 @@
-/// <reference types="cypress" />
+// /// <reference types="cypress" />
 
-beforeEach(()=>{
-    cy.visit('http://zero.webappsecurity.com/login.html')
-})
+// beforeEach(()=>{
+//     cy.visit('http://zero.webappsecurity.com/login.html')
+// })
 
-describe('Custom Commands',()=>{
+// describe('Custom Commands',()=>{
 
-    it("try login with commands", () => {
-        cy.login('username', 'password');
-    });
+//     it("try login with commands", () => {
+//         cy.login('username', 'password');
+//     });
 
-})
+// })

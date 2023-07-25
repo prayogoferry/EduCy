@@ -11,6 +11,7 @@ describe ('Login ',()=>{
         cy.fixture("user").then(u=>{
            let username = u.username
            let password = u.password
+           
 
             cy.get('#username').clear().type(username[1])
             cy.get('#password').clear().type(password[1])
