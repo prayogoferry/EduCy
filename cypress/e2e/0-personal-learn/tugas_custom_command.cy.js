@@ -1,8 +1,8 @@
 /// <reference types = "Cypress"/>
 
-beforeEach(()=>{
-    cy.visit('http://zero.webappsecurity.com/login.html', {timeout:10000})
-})
+// before(()=>{
+    
+// })
 
 it('Pays Bill', () => {
     const payee = ["Sprint", 'Bank of America', 'Aplle', 'Wells Fargo']
@@ -11,7 +11,7 @@ it('Pays Bill', () => {
     const date= '8'
     const desc = 'description'
 
-    // cy.visit('http://zero.webappsecurity.com/login.html', {timeout:10000})
+    cy.visit('http://zero.webappsecurity.com/login.html', {timeout:10000})
 
     cy.login_2()//login dengan lain skema ke2 di custom.js
 
@@ -21,5 +21,5 @@ it('Pays Bill', () => {
 
     cy.pay_bill(payee[0], account[1], amount, date, desc)
 
-    //cy.get('#alert_content > span').should('contain.text', "The payment was successfully submitted.")
+    // cy.get('#alert_content > span').should('contain.text', "The payment was successfully submitted.")
 });
