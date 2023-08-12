@@ -25,6 +25,10 @@ it('Login into the Website', () => {//login dengan skema pertama dalam custom.js
     })
 })
 
+
+
+
+
  it('pay bills', () => {
 
     cy.login_2()//login dengan lain skema ke2 di custom.js
