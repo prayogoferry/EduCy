@@ -76,7 +76,7 @@ Cypress.Commands.add('loginViaAPI', (
         email= Cypress.env('userEmail'), 
         password= Cypress.env('userPassword')
         )=>{
-            cy.request('POST', `${Cypress.env('apiUrl')}/basic_auth`, {
+            cy.request('POST', `${Cypress.env('apiUrl')}`, {
                 username: email,
                 password,
             }).then((response)=>{
