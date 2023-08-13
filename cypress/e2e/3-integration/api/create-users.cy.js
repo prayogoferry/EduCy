@@ -9,6 +9,7 @@ describe('Add new user', ()=>{
         cy.request("POST", "https://reqres.in/api/users", users)
         .then((response)=>{
             expect(response.status).equal(201)
+           // expect(response.body.name).contain('')
             expect(response.body.name).contain(users.name)
             expect(response.body.job).contain(users.job)
             
