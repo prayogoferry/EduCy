@@ -102,7 +102,7 @@ Cypress.Commands.add('brmodel', (
         cy.setCookie('sessionId', response.body.sessionId)
         cy.setCookie('userId', response.body.userId)
         //cy.visit('/#!/main')
-        cy
+        expect(response.status).equal(200)
         })
     })
      
