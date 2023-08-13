@@ -13,7 +13,8 @@ describe('validate headers', ()=>{
 
         cy.request("GET", "https://pokeapi.co/api/v2/pokemon/ditto")
         .then((response)=>{
-            expect(response.body.abilities).contain('name')
+            expect(response.body.abilities).contain('limber')
+            //expect(response.body).contain('abilities')
         })
 
         cy.get('@pokemon').its('body').its("abilities")
