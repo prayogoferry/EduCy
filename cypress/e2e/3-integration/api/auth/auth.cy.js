@@ -20,6 +20,9 @@ describe('basic auth', ()=>{
 
 /// tugas login api
     it('login via API', () => {
-        cy.loginViaAPI()
+       // cy.loginViaAPI()
+        cy.brmodel()
+        cy.contains('h2', "Models").should('be.visible')
+        cy.get('h2').should('contain.text', "Models")
     });
 })

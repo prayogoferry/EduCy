@@ -2,16 +2,17 @@ it('successfully logs in programmatically', () => {
     // cy.intercept('GET', `${Cypress.env('apiUrl')}/models?userId=*`)
     //   .as('getUserModels')
   
-    cy.request('POST', `${Cypress.env('https://the-internet.herokuapp.com')}/basic_auth`, {
-      username: Cypress.env('userEmail'),
-      password: Cypress.env('userPassword'),
+    //url = Cypress.env("urlApi")
+    cy.request('POST', `https://app.brmodeloweb.com/users/login`, {
+      username: Cypress.env('userMail'),
+      password: Cypress.env('userPass'),
     }).then((response) => {
       cy.setCookie('sessionId', response.body.sessionId)
       cy.setCookie('userId', response.body.userId)
-      cy.setCookie('userName', response.body.userName)
+      //cy.setCookie('userName', response.body.userName)
     })
   
-    cy.visit('/#!/main')
+    //cy.visit('/#!/main')
     // cy.wait('@getUserModels')
-    cy.contains('h2', 'Models').should('be.visible')
+    //cy.contains('h2', 'Models').should('be.visible')
   })

@@ -74,33 +74,37 @@ Cypress.Commands.add('input', (element, inputText)=>{
 
 Cypress.Commands.add('loginViaAPI', (
         email= Cypress.env('userEmail'), 
-        password= Cypress.env('userPassword')
+        password= Cypress.env('userPassword'),
+        url= Cypress.env('apiUrl')
         )=>{
-            cy.request('POST', `${Cypress.env('apiUrl')}`, {
+            cy.request('POST', `${url}/basic_auth`, {
                 username: email,
                 password,
             }).then((response)=>{
                 cy.setCookie('sessionId', response.body.sessionId)
                 cy.setCookie('userId', response.body.userId)
-                cy.setCookie('userName', response.body.userName)
-                cy.visit('/#!/main')
+                //cy.setCookie('userName', response.body.userName)
+               // cy.visit('/#!/main')
             })
         })
 
 
-// Cypress.Commands.add('loginViaAPI', (
-//             email = Cypress.env('userEmail'),
-//             password = Cypress.env('userPassword')
-//           ) => {
-//             cy.request('POST', `${Cypress.env('apiUrl')}/users/login`, {
-//               username: email,
-//               password,
-//             }).then((response) => {
-//               cy.setCookie('sessionId', response.body.sessionId)
-//               cy.setCookie('userId', response.body.userId)
-//               cy.setCookie('userName', response.body.userName)
-//               cy.visit('/#!/main')
-//             })
-//          })
+Cypress.Commands.add('brmodel', (
+    email= Cypress.env('userMail'),
+    password=Cypress.env('userPass'),
+    urlEnv= Cypress.env('urlApi'),
+    url="https://app.brmodeloweb.com/users/login"
+    )=>{
+        cy.request('POST', `${urlEnv}/users/login`,{
+            username: email,
+            password
+        }).then((response)=>{
+        cy.setCookie('sessionId', response.body.sessionId)
+        cy.setCookie('userId', response.body.userId)
+        //cy.visit('/#!/main')
+        cy
+        })
+    })
+     
          
          
