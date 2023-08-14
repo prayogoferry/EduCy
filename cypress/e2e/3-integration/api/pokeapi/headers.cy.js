@@ -8,7 +8,7 @@ describe('validate headers', ()=>{
 
         cy.get('@pokemon').then((response)=>{
             expect(response.status).equal(200)
-           // expect(response.).should('include', 'limber')
+            expect(response.body.name).contain('ditto')
         })
 
         // cy.request("GET", "https://pokeapi.co/api/v2/pokemon/ditto")
@@ -17,8 +17,8 @@ describe('validate headers', ()=>{
         //     //expect(response.body).contain('abilities')
         // })
 
-        cy.get('@pokemon').its('body').its("abilities").its('url')
-        .should('include', "ability")
+        cy.get('@pokemon').its('body').its('name')
+        .should('include', "ditto")
     });
 
     it('validate', () => {
