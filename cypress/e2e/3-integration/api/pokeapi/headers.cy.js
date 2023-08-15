@@ -9,13 +9,14 @@ describe('validate headers', ()=>{
         cy.get('@pokemon').then((response)=>{
             expect(response.status).equal(200)
             expect(response.body.name).contain('ditto')
+            expect(response.body.abilities).contain({url:'https://pokeapi.co/api/v2/ability/7'})
         })
 
-        // cy.request("GET", "https://pokeapi.co/api/v2/pokemon/ditto")
-        // .then((response)=>{
-        //     expect(response.body.abilities).contain('limber')
-        //     //expect(response.body).contain('abilities')
-        // })
+        cy.request("GET", "https://pokeapi.co/api/v2/pokemon/ditto")
+        .then((response)=>{
+            expect(response.body.abilities.ability).contain({url : 'https://pokeapi.co/api/v2/ability/7'})
+            //expect(response.body).contain('abilities')
+        })
 
         cy.get('@pokemon').its('body').its('name')
         .should('include', "ditto")
