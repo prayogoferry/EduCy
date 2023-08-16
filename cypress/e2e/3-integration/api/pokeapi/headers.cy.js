@@ -8,8 +8,9 @@ describe('validate headers', ()=>{
 
         cy.get('@pokemon').then((response)=>{
             expect(response.status).equal(200)
-            expect(response.body.name).contain('ditto')
-            expect(response.body.abilities[0].ability.url).contain('https://pokeapi.co/api/v2/ability/7/')
+            expect(response.body.name).contain('ditto')//valdasi nama
+            expect(response.body.abilities[0].ability.url)
+            .contain('https://pokeapi.co/api/v2/ability/7/')//validasi url ability
             
         })
 
